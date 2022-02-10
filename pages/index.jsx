@@ -1,20 +1,35 @@
 import Head from 'next/head'
-import { Container, Row, Card, Button } from 'react-bootstrap'
+import { Container, Row, Card, Button, Nav } from 'react-bootstrap'
 
 export default function Home() {
   return (
     <Container className="md-container">
       <Head>
-        <title>ReactJS with react-bootstrap</title>
-        <link rel="icon" href="/favicon-32x32.png" />
+        <title>Sy Dyson</title>
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container>
-        <h1>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+        <h1 className="logoText">
+          Sy Dyson
         </h1>
-        <p>
+        <Nav
+          className="justify-content-center"
+          onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
+          activeKey="/home"
+        >
+          <Nav.Item>
+            <Nav.Link href="/home">Home</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey="link-1">Link</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey="link-2">Link</Nav.Link>
+          </Nav.Item>
+        </Nav>
+        {/* <p>
           Get started by editing <code>pages/index.js</code>
-        </p>
+        </p> */}
         <Container>
           <Row className="justify-content-md-between">
             <Card className="sml-card">

@@ -1,7 +1,8 @@
 /* ensure all pages have Bootstrap CSS */
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
-$backgroundColor: #2ecc71;
+$backgroundColor: white;
+$textHuge: 120px;
 
 body {
   background-color: $backgroundColor;
@@ -29,4 +30,9 @@ body {
 .sml-logo {
   height: 1em;
   margin-left: 10px;
+}
+
+.logoText {
+  font-size: $textHuge;
+  text-align: center;
 }
