@@ -4,35 +4,35 @@
 $backgroundColor: white;
 $textHuge: 120px;
 
+.text-center {
+  text-align: center;
+}
+
 body {
   background-color: $backgroundColor;
 }
 
 .md-container {
-  max-width: 800px;
+  max-width: 960px;
   padding-top: 2rem;
 }
 
 .sml-card {
-  width: 22rem;
   margin: 1rem 0;
 }
 
-.cntr-footer {
-  height: 80px;
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-top: 1px solid #ccc;
-}
-
-.sml-logo {
-  height: 1em;
-  margin-left: 10px;
-}
-
-.logoText {
+.logo-text {
+  @extend .text-center;
   font-size: $textHuge;
-  text-align: center;
+  margin-bottom: 30px;
+}
+
+.subhead-text {
+  @extend .text-center;
+  margin-top: 30px;
+  font-size: 16px;
+}
+
+.videobox {
+  margin-top: 40px;
 }

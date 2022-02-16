@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import { Container, Row, Card, Button, Nav } from 'react-bootstrap'
+import ReactPlayer from 'react-player'
+import { Container, Row, Col, ListGroup, Button, Nav } from 'react-bootstrap'
 
 export default function Home() {
   return (
@@ -9,12 +10,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container>
-        <h1 className="logoText">
+        <h1 className="logo-text">
           Sy Dyson
         </h1>
         <Nav
           className="justify-content-center"
-          onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
+          onSelect={(selectedKey) => console.log(`selected ${selectedKey}`)}
           activeKey="/home"
         >
           <Nav.Item>
@@ -27,78 +28,24 @@ export default function Home() {
             <Nav.Link eventKey="link-2">Link</Nav.Link>
           </Nav.Item>
         </Nav>
-        {/* <p>
-          Get started by editing <code>pages/index.js</code>
-        </p> */}
-        <Container>
-          <Row className="justify-content-md-between">
-            <Card className="sml-card">
-              <Card.Body>
-                <Card.Title>Documentation</Card.Title>
-                <Card.Text>
-                  Find in-depth information about Next.js features and API.
-                </Card.Text>
-                <Button variant="primary" href="https://nextjs.org/docs">
-                  More &rarr;
-                </Button>
-              </Card.Body>
-            </Card>
-            <Card className="sml-card">
-              <Card.Body>
-                <Card.Title>Learn</Card.Title>
-                <Card.Text>
-                  Learn about Next.js in an interactive course with quizzes!
-                </Card.Text>
-                <Button variant="primary" href="https://nextjs.org/learn">
-                  More &rarr;
-                </Button>
-              </Card.Body>
-            </Card>
-          </Row>
-          <Row className="justify-content-md-between">
-            <Card className="sml-card">
-              <Card.Body>
-                <Card.Title>Examples</Card.Title>
-                <Card.Text>
-                  Discover and deploy boilerplate example Next.js projects.
-                </Card.Text>
-                <Button
-                  variant="primary"
-                  href="https://github.com/vercel/next.js/tree/canary/examples"
-                >
-                  More &rarr;
-                </Button>
-              </Card.Body>
-            </Card>
-            <Card className="sml-card">
-              <Card.Body>
-                <Card.Title>Deploy</Card.Title>
-                <Card.Text>
-                  Instantly deploy your Next.js site to a public URL with
-                  Vercel.
-                </Card.Text>
-                <Button
-                  variant="primary"
-                  href="https://vercel.com/new?utm_source=github&utm_medium=example&utm_campaign=next-example"
-                >
-                  More &rarr;
-                </Button>
-              </Card.Body>
-            </Card>
+        <p className="subhead-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+        <Container className="videobox">
+          <Row>
+            <Col sm={9}>
+              <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' />
+            </Col>
+            <Col sm={3}>
+              <ListGroup variant="flush">
+                <ListGroup.Item>Cras justo odio</ListGroup.Item>
+                <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+                <ListGroup.Item>Morbi leo risus</ListGroup.Item>
+                <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
+                <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+              </ListGroup>
+            </Col>
           </Row>
         </Container>
       </Container>
-
-      <footer className="cntr-footer">
-        <a
-          href="https://vercel.com?filter=next.js&utm_source=github&utm_medium=example&utm_campaign=next-example"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="sml-logo" />
-        </a>
-      </footer>
     </Container>
   )
 }
