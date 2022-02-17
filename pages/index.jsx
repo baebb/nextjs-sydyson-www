@@ -1,8 +1,19 @@
 import Head from 'next/head'
+import React, { useState } from 'react'
 import ReactPlayer from 'react-player'
-import { Container, Row, Col, ListGroup, Button, Nav } from 'react-bootstrap'
+import { Container, Row, Col, ListGroup, Nav } from 'react-bootstrap'
+
+import { videos } from '../utils/vars'
 
 export default function Home() {
+  const [videoUrl, setVideoUrl] = useState(videos[0].url);
+  const [videoPlaying, setVideoPlaying] = useState(false);
+
+  const handleVideoSelect = (url) => {
+    setVideoUrl(url)
+    setVideoPlaying(true)
+  }
+
   return (
     <Container className="md-container">
       <Head>
@@ -32,15 +43,19 @@ export default function Home() {
         <Container className="videobox">
           <Row>
             <Col sm={9}>
-              <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' />
+              <ReactPlayer
+                playing={videoPlaying}
+                url={videoUrl}
+                controls={true}
+              />
             </Col>
             <Col sm={3}>
               <ListGroup variant="flush">
-                <ListGroup.Item>Cras justo odio</ListGroup.Item>
-                <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-                <ListGroup.Item>Morbi leo risus</ListGroup.Item>
-                <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
-                <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+                {videos.map(({ title, url }, index) => (
+                  <ListGroup.Item key={index} action onClick={() => handleVideoSelect(url)}>
+                    {title}
+                  </ListGroup.Item>
+                ))}
               </ListGroup>
             </Col>
           </Row>
