@@ -3,6 +3,12 @@
 
 $backgroundColor: white;
 $textHuge: 120px;
+$textSmall: 12px;
+
+$bp-xs: 576px;
+$bp-sm: 768px;
+$bp-md: 992px;
+$bp-lg: 1200px;
 
 .text-center {
   text-align: center;
@@ -15,6 +21,7 @@ body {
 .md-container {
   max-width: 960px;
   padding-top: 2rem;
+  padding-bottom: 4rem;
 }
 
 .sml-card {
@@ -35,4 +42,31 @@ body {
 
 .videobox {
   margin-top: 40px;
+  .player-wrapper {
+    position: relative;
+    padding-top: 56.25% /* Player ratio: 100 / (1280 / 720) */
+  }
+
+  .react-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .video-col {
+    @media (max-width: $bp-xs) {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.video-list {
+  height: 388px;
+  overflow: auto;
+  @media (max-width: $bp-xs) {
+    height: 240px;
+  }
+}
+
+.video-list-item {
+  font-size: $textSmall;
 }
