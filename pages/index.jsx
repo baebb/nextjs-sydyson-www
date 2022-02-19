@@ -40,7 +40,7 @@ export default function Home() {
               <Nav.Link eventKey="link-2">Link</Nav.Link>
             </Nav.Item>
           </Nav>
-          <p className="subhead-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+          <p className="subhead-text">Welcome to SyDyson dot com</p>
           <div className="videobox">
             <Row>
               <Col xs={12} md={9} className="video-col">
